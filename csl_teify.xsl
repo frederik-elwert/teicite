@@ -57,6 +57,16 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="csl:text[@variable='collection-title']">
+    <xsl:copy>
+      <xsl:apply-templates select="." mode="annotate">
+        <xsl:with-param name="tei_elem">title</xsl:with-param>
+        <xsl:with-param name="tei_attrs">level=&quot;s&quot;</xsl:with-param>
+      </xsl:apply-templates>
+      <xsl:apply-templates select="@*[not(name()='prefix') and not(name()='suffix')]|node()" />
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="csl:text[@variable='publisher-place']">
     <xsl:copy>
       <xsl:apply-templates select="." mode="annotate">
@@ -75,6 +85,16 @@
       <xsl:apply-templates select="." mode="annotate">
         <xsl:with-param name="tei_elem">biblScope</xsl:with-param>
         <xsl:with-param name="tei_attrs">unit=&quot;<xsl:value-of select="@variable" />&quot;</xsl:with-param>
+      </xsl:apply-templates>
+      <xsl:apply-templates select="@*[not(name()='prefix') and not(name()='suffix')]|node()" />
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="csl:text[@variable='collection-number']">
+    <xsl:copy>
+      <xsl:apply-templates select="." mode="annotate">
+        <xsl:with-param name="tei_elem">biblScope</xsl:with-param>
+        <xsl:with-param name="tei_attrs">unit=&quot;volume&quot;</xsl:with-param>
       </xsl:apply-templates>
       <xsl:apply-templates select="@*[not(name()='prefix') and not(name()='suffix')]|node()" />
     </xsl:copy>

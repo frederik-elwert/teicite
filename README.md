@@ -12,4 +12,4 @@ This repository contains three sample files:
     - In most cases (except for series titles), the `level` attribute of `title` is omitted. Deciding whether a title is of level a, m, or j requires some non-trivial parsing (and potentially extension) of the CSL logic.
     - The script annotates bibliography and citation information alike. Having rich annotations in the citations might be undesirable.
 
-Such a style can be used to generate a bibliography from any reference format that `pandoc-citeproc` can read. Since TEI (e.g., `biblStruct`) is not among these, a first step might require to generate a MODS, BibTeX, or CSL JSON file.
+Such a style can be used to generate a bibliography from any reference format that `pandoc-citeproc` can read. Since TEI (e.g., `biblStruct`) is not among these, a first step might require to generate a MODS, BibTeX, or CSL JSON file. [These XSLT-Scripts](https://github.com/OpenArabicPE/convert_tei-to-bibliographic-data) from the Open Arabic Periodicals project can help with that.
